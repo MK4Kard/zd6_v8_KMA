@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">MebelDea</string>
+    <string name="authorization">Авторизация</string>
+    <string name="login">Логин</string>
+    <string name="password">Пароль</string>
+    <string name="mail">Почта</string>
+    <string name="enter">Войти</string>
+    <string-array name="users">
+        <item>Работник</item>
+        <item>Клиент</item>
+        <item>Поставщик</item>
+    </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="your_email">Введите свою почту</string>
+    <string name="your_login">Введите свой логин</string>
+    <string name="your_password">Введите свой пароль</string>
+</resources>

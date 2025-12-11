@@ -10,6 +10,7 @@ import android.widget.EditText
 import android.widget.Spinner
 import androidx.navigation.fragment.findNavController
 import android.widget.ArrayAdapter
+import androidx.appcompat.app.AppCompatActivity
 import com.companyname.zd7_v8_kma.Login.LoginDb
 
 class SignFragment : Fragment() {
@@ -44,4 +45,14 @@ class SignFragment : Fragment() {
 
         return view
     }
+
+    /*fun Save(mail: String, login: String, pass: String, user: String){
+        val sharedPreferences = getSharedPreferences("User", AppCompatActivity.MODE_PRIVATE)
+        val editor = sharedPreferences.edit()
+
+        editor.putString("mail", mail)
+        editor.putString("login", login)
+        editor.putString("password", pass)
+        editor.putString("user", user)
+    }*/
 }

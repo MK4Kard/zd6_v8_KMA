@@ -10,11 +10,14 @@ import android.widget.EditText
 import android.widget.Spinner
 import androidx.navigation.fragment.findNavController
 import android.widget.ArrayAdapter
-import androidx.appcompat.app.AppCompatActivity
+import androidx.room.Room
 import com.companyname.zd7_v8_kma.Login.LoginDb
+import com.companyname.zd7_v8_kma.Login.LoginEntity
+import com.google.android.material.snackbar.Snackbar
 
 class SignFragment : Fragment() {
 
+    private val DATABASE_NAME: String = "logins"
     lateinit var mail: EditText
     lateinit var login: EditText
     lateinit var password: EditText
@@ -30,6 +33,10 @@ class SignFragment : Fragment() {
     ): View? {
         val view: View = inflater.inflate(R.layout.fragment_sign, container, false)
 
+        mail = view.findViewById(R.id.edit_mail)
+        login = view.findViewById(R.id.edit_login)
+        password = view.findViewById(R.id.edit_password)
+
         spinner = view.findViewById(R.id.spinner)
 
         ArrayAdapter.createFromResource(requireContext(), R.array.users,
@@ -38,21 +45,23 @@ class SignFragment : Fragment() {
             spinner.adapter = adapter
         }
 
+        val db = Room.databaseBuilder(requireContext(), LoginDb::class.java,
+            DATABASE_NAME).build()
+        val logDao = db.getLoginDao()
+        val log: List<LoginEntity> = logDao.getAll()
+
         val navigateButton: Button = view.findViewById(R.id.button)
+
         navigateButton.setOnClickListener {
-            findNavController().navigate(R.id.action_signFragment_to_userFragment)
+            if (mail.text.isNotEmpty() && login.text.isNotEmpty() && password.text.isNotEmpty()) {
+                findNavController().navigate(R.id.action_signFragment_to_userFragment)
+
+            }
+            else {
+                Snackbar.make(view, "Заполните поля!", Snackbar.LENGTH_SHORT).show()
+            }
         }
 
         return view
     }
-
-    /*fun Save(mail: String, login: String, pass: String, user: String){
-        val sharedPreferences = getSharedPreferences("User", AppCompatActivity.MODE_PRIVATE)
-        val editor = sharedPreferences.edit()
-
-        editor.putString("mail", mail)
-        editor.putString("login", login)
-        editor.putString("password", pass)
-        editor.putString("user", user)
-    }*/
 }

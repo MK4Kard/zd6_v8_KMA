@@ -6,7 +6,7 @@ import androidx.room.Query
 
 @Dao
 interface LoginDao {
-    @Query("select * from 'logins'")
+    @Query("SELECT * FROM logins")
     fun getAll(): List<LoginEntity>
 
     @Insert

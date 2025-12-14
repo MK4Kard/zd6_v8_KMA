@@ -18,10 +18,130 @@
             app:popEnterAnim="@anim/nav_default_pop_enter_anim"
             app:popExitAnim="@anim/nav_default_pop_exit_anim"
             app:popUpTo="@id/signFragment" />
+        <action
+            android:id="@+id/action_signFragment_to_userWorkFragment"
+            app:destination="@id/userWorkFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            app:popUpTo="@id/signFragment" />
+        <action
+            android:id="@+id/action_signFragment_to_userSubFragment"
+            app:destination="@id/userSubFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            app:popUpTo="@id/signFragment" />
     </fragment>
     <fragment
         android:id="@+id/userFragment"
         android:name="com.companyname.zd7_v8_kma.UserFragment"
         android:label="fragment_user"
-        tools:layout="@layout/fragment_user" />
+        tools:layout="@layout/fragment_user" >
+        <action
+            android:id="@+id/action_userFragment_to_infoFragment"
+            app:destination="@id/infoFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            app:popUpTo="@id/userFragment" />
+        <action
+            android:id="@+id/action_userFragment_to_listFragment"
+            app:destination="@id/listFragment"
+            app:popUpTo="@id/userFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/userSubFragment"
+        android:name="com.companyname.zd7_v8_kma.UserSubFragment"
+        android:label="fragment_user_sub"
+        tools:layout="@layout/fragment_user_sub" >
+        <action
+            android:id="@+id/action_userSubFragment_to_addDetailsFragment"
+            app:destination="@id/addDetailsFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            app:popUpTo="@id/userSubFragment" />
+        <action
+            android:id="@+id/action_userSubFragment_to_editSupplierFragment"
+            app:destination="@id/editSupplierFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            app:popUpTo="@id/userSubFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/userWorkFragment"
+        android:name="com.companyname.zd7_v8_kma.UserWorkFragment"
+        android:label="fragment_user_work"
+        tools:layout="@layout/fragment_user_work" >
+        <action
+            android:id="@+id/action_userWorkFragment_to_addFurnitureFragment"
+            app:destination="@id/addFurnitureFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            app:popUpTo="@id/userWorkFragment" />
+        <action
+            android:id="@+id/action_userWorkFragment_to_editFurnitureFragment"
+            app:destination="@id/editFurnitureFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            app:popUpTo="@id/userWorkFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addDetailsFragment"
+        android:name="com.companyname.zd7_v8_kma.AddDetailsFragment"
+        android:label="fragment_add_details"
+        tools:layout="@layout/fragment_add_details" />
+    <fragment
+        android:id="@+id/editSupplierFragment"
+        android:name="com.companyname.zd7_v8_kma.EditSupplierFragment"
+        android:label="fragment_edit_supplier"
+        tools:layout="@layout/fragment_edit_supplier">
+        <argument
+            android:name="supplierId"
+            app:argType="integer"/>
+    </fragment>
+    <fragment
+        android:id="@+id/addFurnitureFragment"
+        android:name="com.companyname.zd7_v8_kma.AddFurnitureFragment"
+        android:label="fragment_add_furniture"
+        tools:layout="@layout/fragment_add_furniture" />
+    <fragment
+        android:id="@+id/editFurnitureFragment"
+        android:name="com.companyname.zd7_v8_kma.EditFurnitureFragment"
+        android:label="fragment_edit_furniture"
+        tools:layout="@layout/fragment_edit_furniture">
+        <argument
+            android:name="furnitureId"
+            app:argType="integer"/>
+    </fragment>
+    <fragment
+        android:id="@+id/infoFragment"
+        android:name="com.companyname.zd7_v8_kma.InfoFragment"
+        android:label="fragment_info"
+        tools:layout="@layout/fragment_info">
+
+        <argument
+            android:name="clientId"
+            app:argType="integer"/>
+    </fragment>
+    <fragment
+        android:id="@+id/listFragment"
+        android:name="com.companyname.zd7_v8_kma.ListFragment"
+        android:label="fragment_list"
+        tools:layout="@layout/fragment_list">
+        <argument
+            android:name="loginId"
+            app:argType="integer"/>
+    </fragment>
 </navigation>

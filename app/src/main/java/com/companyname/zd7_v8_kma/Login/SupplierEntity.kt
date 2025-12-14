@@ -8,10 +8,8 @@ import androidx.room.PrimaryKey
 data class SupplierEntity (
     @PrimaryKey(autoGenerate = true) val id: Int = 0,
     @ColumnInfo("loginId") val login: Int,
-    @ColumnInfo("detail")val detail: String,
-    @ColumnInfo("characteristicDetail") val characteristics: String,
-    @ColumnInfo("countDetail") val count: Int,
-    @ColumnInfo("priceOneDetail") val price: Double,
-    @ColumnInfo("buyer") val buyer: String,
-    @ColumnInfo("numberBuyers") val num: Int
+    @ColumnInfo("detail") var detail: String,
+    @ColumnInfo("characteristicDetail") var characteristics: String,
+    @ColumnInfo("countDetail") var count: Int,
+    @ColumnInfo("priceOneDetail") var price: Double
 )

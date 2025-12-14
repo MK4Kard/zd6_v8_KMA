@@ -1,18 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.motion.widget.MotionLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".SignFragment"
-    app:layoutDescription="@xml/motion_scene">
+    tools:context=".EditSupplierFragment"
+    android:background="@color/light">
 
     <TextView
         android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/authorization"
+        android:text="@string/edited"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -22,35 +21,50 @@
         android:textStyle="bold"/>
 
     <TextView
-        android:id="@+id/text"
-        android:layout_width="wrap_content"
+        android:id="@+id/name_d"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/client"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/title"
-        android:textAllCaps="true"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="40dp"
+        android:text="@string/detail"
+        android:textSize="20sp"/>
+
+    <EditText
+        android:id="@+id/edit_name"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/name_d"
+        android:layout_marginTop="15dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:paddingStart="15dp"
+        android:paddingEnd="15dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:textSize="20sp"
+        android:hint="@string/name_d"
+        android:background="@android:color/transparent"/>
+
+    <TextView
+        android:id="@+id/charah"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edit_name"
+        android:layout_marginStart="15dp"
         android:layout_marginTop="10dp"
-        android:textSize="20sp"
-        android:textStyle="bold"/>
-
-    <TextView
-        android:id="@+id/mail"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/title"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="40dp"
-        android:text="@string/mail"
+        android:text="@string/charact"
         android:textSize="20sp"/>
 
     <EditText
-        android:id="@+id/edit_mail"
+        android:id="@+id/edit_char"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/mail"
+        app:layout_constraintTop_toBottomOf="@id/charah"
         android:layout_marginTop="15dp"
         android:layout_marginStart="15dp"
         android:layout_marginEnd="15dp"
@@ -59,27 +73,26 @@
         android:paddingTop="10dp"
         android:paddingBottom="10dp"
         android:textSize="20sp"
-        android:inputType="textEmailAddress"
-        android:hint="@string/your_email"
+        android:hint="@string/charact_d"
         android:background="@android:color/transparent"/>
 
     <TextView
-        android:id="@+id/login"
+        android:id="@+id/count"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/edit_mail"
+        app:layout_constraintTop_toBottomOf="@id/edit_char"
         android:layout_marginStart="15dp"
-        android:layout_marginTop="40dp"
-        android:text="@string/login"
+        android:layout_marginTop="10dp"
+        android:text="@string/count_d"
         android:textSize="20sp"/>
 
     <EditText
-        android:id="@+id/edit_login"
+        android:id="@+id/edit_count"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/login"
+        app:layout_constraintTop_toBottomOf="@id/count"
         android:layout_marginTop="15dp"
         android:layout_marginStart="15dp"
         android:layout_marginEnd="15dp"
@@ -88,26 +101,27 @@
         android:paddingTop="10dp"
         android:paddingBottom="10dp"
         android:textSize="20sp"
-        android:hint="@string/your_login"
+        android:inputType="number"
+        android:hint="@string/count_edit"
         android:background="@android:color/transparent"/>
 
     <TextView
-        android:id="@+id/password"
+        android:id="@+id/price"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/edit_login"
+        app:layout_constraintTop_toBottomOf="@id/edit_count"
         android:layout_marginStart="15dp"
-        android:layout_marginTop="40dp"
-        android:text="@string/password"
+        android:layout_marginTop="10dp"
+        android:text="@string/price_d"
         android:textSize="20sp"/>
 
     <EditText
-        android:id="@+id/edit_password"
+        android:id="@+id/edit_price"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/password"
+        app:layout_constraintTop_toBottomOf="@id/price"
         android:layout_marginTop="15dp"
         android:layout_marginStart="15dp"
         android:layout_marginEnd="15dp"
@@ -116,8 +130,8 @@
         android:paddingTop="10dp"
         android:paddingBottom="10dp"
         android:textSize="20sp"
-        android:inputType="textPassword"
-        android:hint="@string/your_password"
+        android:inputType="number"
+        android:hint="@string/edit_price"
         android:background="@android:color/transparent"/>
 
     <androidx.appcompat.widget.AppCompatButton
@@ -125,48 +139,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/buttonDelete"
         android:layout_marginStart="15dp"
         android:layout_marginEnd="15dp"
-        android:layout_marginBottom="25dp"
+        android:layout_marginBottom="10dp"
         android:textAllCaps="false"
-        android:text="@string/enter"
-        android:textSize="20sp"
-        android:textColor="@color/white"
-        android:paddingTop="15dp"
-        android:paddingBottom="15dp"
-        android:background="@drawable/btn"
-        android:textStyle="bold"/>
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/button2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginStart="15dp"
-        android:layout_marginEnd="15dp"
-        android:layout_marginBottom="25dp"
-        android:textAllCaps="false"
-        android:text="@string/enter"
-        android:textSize="20sp"
-        android:textColor="@color/white"
-        android:paddingTop="15dp"
-        android:paddingBottom="15dp"
-        android:background="@drawable/btn_orange"
-        android:textStyle="bold"/>
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/button3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginStart="15dp"
-        android:layout_marginEnd="15dp"
-        android:layout_marginBottom="25dp"
-        android:textAllCaps="false"
-        android:text="@string/enter"
+        android:text="@string/save"
         android:textSize="20sp"
         android:textColor="@color/white"
         android:paddingTop="15dp"
@@ -174,16 +152,22 @@
         android:background="@drawable/btn_grey"
         android:textStyle="bold"/>
 
-    <androidx.constraintlayout.helper.widget.Carousel
-        android:id="@+id/carousel"
-        android:layout_width="wrap_content"
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonDelete"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:carousel_forwardTransition="@+id/forward"
-        app:carousel_backwardTransition="@+id/backward"
-        app:carousel_previousState="@+id/previous"
-        app:carousel_nextState="@+id/next"
-        app:carousel_infinite="true"
-        app:carousel_firstView="@+id/button"
-        app:constraint_referenced_ids="button2,button3"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="25dp"
+        android:textAllCaps="false"
+        android:text="@string/delete"
+        android:textSize="20sp"
+        android:textColor="@color/white"
+        android:paddingTop="15dp"
+        android:paddingBottom="15dp"
+        android:background="@drawable/btn_grey"
+        android:textStyle="bold"/>
 
-</androidx.constraintlayout.motion.widget.MotionLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -8,8 +8,8 @@ import androidx.room.PrimaryKey
 data class ClientEntity (
     @PrimaryKey(autoGenerate = true) val id: Int = 0,
     @ColumnInfo("loginId") val login: Int,
-    @ColumnInfo("order")val order: String,
-    @ColumnInfo("orderCompany") val company: String,
+    @ColumnInfo("orderId")val orderId: Int,
+    @ColumnInfo("orderCompany") val company: Int,
     @ColumnInfo("orderCount") val count: Int,
     @ColumnInfo("priceOrder") val price: Double
 )
